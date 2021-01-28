@@ -1,0 +1,85 @@
+body {
+  background-color: #272722;
+  text-align: center;
+}
+
+header {
+  background-color: gainsboro;
+  padding: 20px;
+}
+
+h1 {
+  margin: 0;
+  text-align: center;
+}
+
+.scorecard {
+  border: 3px outset white;
+  border-radius: 5px;
+  height: 125px;
+  width: 250px;
+  background: transparent;
+  margin: 50px auto;
+  padding: 15px 20px;
+  position: relative;
+}
+
+.score {
+  color: aliceblue;
+  font-size: 50px;
+  margin: 34px auto;
+}
+
+.name-card {
+  border-radius: 2px;
+  font-size: 16px;
+  color: aliceblue;
+  background-color: #e25840;
+  padding: 5px 5px;
+}
+
+#score-rectangle-left {
+  position: absolute;
+  top: 65px;
+  left: -32px;
+}
+
+#score-rectangle-right {
+  position: absolute;
+  top: 65px;
+  right: -40px;
+}
+
+h2 {
+  color: aliceblue;
+  margin: 40px auto;
+}
+
+.choices {
+  display: flex;
+  justify-content: center;
+  margin: 40px auto;
+}
+
+.choice {
+  border: 3px outset white;
+  border-radius: 50%;
+  margin: auto 30px;
+  padding: 2px;
+}
+img {
+  width: 70px;
+}
+
+h3 {
+  color: aliceblue;
+}
+
+/* Hide or remove Class for jQuery use */
+.hidden {
+  visibility: hidden;
+}
+
+.remvoe {
+  display: none;
+}
