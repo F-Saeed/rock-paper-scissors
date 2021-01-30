@@ -5,49 +5,60 @@ let computerPlay = () => {
 
 let playRound = (playerSelection, computerSelection) => {
   return playerSelection === "rock" && computerSelection === "scissors"
-    ? "You Win!"
+    ? "You Win!, rock beats scissors."
     : playerSelection === "rock" && computerSelection === "paper"
-    ? "You Lose!"
+    ? "You Lose!, paper beats rock."
     : playerSelection === "paper" && computerSelection === "rock"
-    ? "You Win!"
+    ? "You Win!, paper beats rock."
     : playerSelection === "paper" && computerSelection === "scissors"
-    ? "You Lose!"
+    ? "You Lose!, scissors beats paper."
     : playerSelection === "scissors" && computerSelection === "rock"
-    ? "You Lose!"
+    ? "You Lose!, rock beats scissors."
     : playerSelection === "scissors" && computerSelection === "paper"
-    ? "You Win!"
+    ? "You Win!, scissors beats paper."
     : "Its a Tie!";
 };
 
-function game() {
-  let computerSelection;
-  let playerSelection;
-  let result;
+let round = 0;
+let wins = 0;
+let losses = 0;
 
-  let wins = 0;
-  let losses = 0;
+$("img").on("click", (event) => {
+  if (round < 5) {
+    let computerSelection = computerPlay();
+    let playerSelection = event.target.id;
+    let result;
 
-  for (let index = 0; index < 5; index++) {
-    computerSelection = computerPlay();
-    playerSelection = prompt("Please input your choice").toLowerCase();
+    setTimeout(() => {
+      result = playRound(playerSelection, computerSelection);
 
-    result = playRound(playerSelection, computerSelection);
+      // updating round number
+      round++;
+      $("h3").text(`Round ${round}`);
 
-    if (result === "You Win!") {
-      wins++;
-    }
-    if (result === "You Lose!") {
-      losses++;
-    }
+      // displaying the result
+      $("h2").text(result);
 
-    console.log(result);
+      // updating the scoreboard
+      if (result.includes("Win!")) {
+        wins++;
+        $("#player-score").html(wins.toString());
+      } else if (result.includes("Lose!")) {
+        losses++;
+        $("#computer-score").html(losses.toString());
+      }
+
+      if (round === 5) {
+        setTimeout(() => {
+          if (wins > losses) {
+            $("h2").text("You win the game!");
+          } else if (losses > wins) {
+            $("h2").text("You loose the game!");
+          } else {
+            $("h2").text("No winner!");
+          }
+        }, 1500);
+      }
+    }, 100);
   }
-
-  if (wins > losses) {
-    console.log("You win the game!");
-  } else if (losses > wins) {
-    console.log("You loose the game!");
-  } else {
-    console.log("No winner!");
-  }
-}
+});

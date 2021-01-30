@@ -3,6 +3,7 @@ body {
   text-align: center;
 }
 
+/** Header **/
 header {
   background-color: gainsboro;
   padding: 20px;
@@ -13,6 +14,8 @@ h1 {
   text-align: center;
 }
 
+/** Main **/
+/* Scorecard section*/
 .scorecard {
   border: 3px outset white;
   border-radius: 5px;
@@ -50,11 +53,13 @@ h1 {
   right: -40px;
 }
 
+/* results section*/
 h2 {
   color: aliceblue;
   margin: 40px auto;
 }
 
+/* choices section */
 .choices {
   display: flex;
   justify-content: center;
@@ -67,15 +72,23 @@ h2 {
   margin: auto 30px;
   padding: 2px;
 }
+
 img {
-  width: 70px;
+  width: 60px;
 }
 
+img:hover {
+  width: 85px;
+}
+
+/* final section*/
 h3 {
   color: aliceblue;
 }
 
-/* Hide or remove Class for jQuery use */
+/*** jQuery ***/
+
+/*** Hide or remove Class for jQuery use ***/
 .hidden {
   visibility: hidden;
 }
