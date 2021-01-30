@@ -85,14 +85,3 @@ img:hover {
 h3 {
   color: aliceblue;
 }
-
-/*** jQuery ***/
-
-/*** Hide or remove Class for jQuery use ***/
-.hidden {
-  visibility: hidden;
-}
-
-.remvoe {
-  display: none;
-}
