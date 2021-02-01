@@ -24,11 +24,11 @@ let wins = 0;
 let losses = 0;
 
 $("img").on("click", (event) => {
-  if (round < 5) {
-    let computerSelection = computerPlay();
-    let playerSelection = event.target.id;
-    let result;
+  let computerSelection = computerPlay();
+  let playerSelection = event.target.id;
+  let result;
 
+  if (round < 5) {
     setTimeout(() => {
       result = playRound(playerSelection, computerSelection);
 
@@ -49,16 +49,25 @@ $("img").on("click", (event) => {
       }
 
       if (round === 5) {
+        $("img").removeClass("choice-hover");
+
         setTimeout(() => {
           if (wins > losses) {
             $("h2").text("You win the game!");
+            $("h3").remove();
           } else if (losses > wins) {
             $("h2").text("You loose the game!");
+            $("h3").remove();
           } else {
             $("h2").text("No winner!");
+            $("h3").remove();
           }
         }, 1500);
       }
     }, 150);
   }
+});
+
+$("#restart").on("click", () => {
+  location.reload(true);
 });

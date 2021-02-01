@@ -1,15 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Asap:wght@500&family=Hanalei&display=swap");
+
 body {
   background-color: #272722;
+  font-family: "Asap", sans-serif;
   text-align: center;
 }
 
 /** Header **/
 header {
   background-color: gainsboro;
+  font-size: 28px;
   padding: 20px;
 }
 
 h1 {
+  font-size: 38px;
   margin: 0;
   text-align: center;
 }
@@ -56,6 +61,8 @@ h1 {
 /* results section*/
 h2 {
   color: aliceblue;
+  font-family: "Hanalei", cursive;
+  font-size: 34px;
   margin: 40px auto;
 }
 
@@ -66,22 +73,37 @@ h2 {
   margin: 40px auto;
 }
 
-.choice {
+img {
   border: 3px outset white;
   border-radius: 50%;
+  cursor: pointer;
   margin: auto 30px;
   padding: 2px;
-}
-
-img {
   width: 60px;
 }
 
-img:hover {
+.choice-hover:hover {
   width: 85px;
 }
 
-/* final section*/
+/* round section */
 h3 {
   color: aliceblue;
+  font-size: 24px;
+}
+
+/* final section */
+#restart {
+  border: 5px outset aliceblue;
+  border-radius: 10px;
+  display: inline-block;
+  font-size: 30px;
+  color: aliceblue;
+  padding: 7.5px 25px;
+  margin: 80px auto;
+}
+
+#restart:hover {
+  cursor: pointer;
+  font-size: 35px;
 }
