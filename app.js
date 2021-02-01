@@ -54,13 +54,13 @@ $("img").on("click", (event) => {
         setTimeout(() => {
           if (wins > losses) {
             $("h2").text("You win the game!");
-            $("h3").remove();
+            $("h3").addClass("removed");
           } else if (losses > wins) {
             $("h2").text("You loose the game!");
-            $("h3").remove();
+            $("h3").addClass("removed");
           } else {
             $("h2").text("No winner!");
-            $("h3").remove();
+            $("h3").addClass("removed");
           }
         }, 1500);
       }
